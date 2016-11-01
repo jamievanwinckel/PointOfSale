@@ -14,7 +14,7 @@ function addItem()
     dollars = asCurrency(runningTotal);
     document.getElementById("subtotal").innerHTML = dollars;
     document.getElementById("price").value = "";
-    setCookie("pretax", runningTotal);
+    setCookie("preTax", runningTotal);
   }
   //IF newItem is not a number
   // THEN show an alert: "Enter price as a number"
