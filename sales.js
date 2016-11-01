@@ -7,7 +7,8 @@ function addItem()
   if (isNaN(newItem)) {
     window.alert ("Enter price as a number");
   }
-  else newItem = Number(newItem) {
+  else {
+  newItem = Number(newItem);
     runningTotal = runningTotal + newItem;
     var dollars;
     dollars = asCurrency(runningTotal);
