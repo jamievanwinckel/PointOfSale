@@ -29,10 +29,22 @@ function addItem()
 }
 
 //takes a number and gives a string with the number displayed as USD currency
+}
+function calculateReceipt() {
+  var receiptSubtotal = Number(receiptSubtotal);
+  receiptSubtotal = getCookie("preTax");
+  var receiptTax = receiptSubtotal * .075;
+  var receiptTotal = receiptSubtotal + receiptTax;
+  document.getElementById("sub").innerHTML = asCurrency(receiptSubtotal);
+  document.getElementById("tax").innerHTML = asCurrency(receiptTax);
+  document.getElementById("tot").innerHTML = asCurrency(receiptTotal);
+  getCookie("preTax");
+}
+
 function asCurrency(val)
 {
   return "$" + val.toFixed(2);
-}
+
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
